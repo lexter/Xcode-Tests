@@ -445,13 +445,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZZ75FS2Y78;
+				DEVELOPMENT_TEAM = K4AWSZ53P9;
 				INFOPLIST_FILE = MyMasterDetailDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wicket.MyMasterDetailDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lexlab.MyMasterDetailDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -463,13 +463,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZZ75FS2Y78;
+				DEVELOPMENT_TEAM = K4AWSZ53P9;
 				INFOPLIST_FILE = MyMasterDetailDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wicket.MyMasterDetailDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lexlab.MyMasterDetailDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
