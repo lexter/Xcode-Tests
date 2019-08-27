@@ -29,6 +29,40 @@ class MyMasterDetailDemoUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        if app.buttons["Edit"].waitForExistence(timeout: 1) {
+            XCTAssert(app.navigationBars.buttons["Edit"].exists, "Cannot locate Edit button.")
+            app.buttons["Edit"].tap()
+        }
+        
+        if app.buttons["Add"].waitForExistence(timeout: 1) {
+            XCTAssert(app.navigationBars.buttons["Add"].exists, "Cannot locate Add button.")
+            app.buttons["Add"].tap()
+            sleep(2)
+            app.buttons["Add"].tap()
+            sleep(2)
+            app.buttons["Add"].tap()
+            sleep(2)
+            app.buttons["Add"].tap()
+        }
+        
+//        if app.buttons["Delete"].waitForExistence(timeout: 3) {
+//            XCTAssert(app.buttons["Delete"].exists, "Cannot locate Delete button.")
+//            app.buttons["Delete"].tap()
+//        }
+        
+        
+    
+        let buttonChildren = app.buttons.allElementsBoundByAccessibilityElement
+
+        for child in buttonChildren {
+            print("CHILD ---> \(child)")
+        }
+        
+//
+//        XCTAssert(buttonChildren.firstMatch.exists, "Cannot locate + button.")
+////        XCTAssert(app.staticTexts["Welcome to XCUITest"].exists)
     }
 
 }
