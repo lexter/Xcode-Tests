@@ -31,28 +31,25 @@ class MyMasterDetailDemoUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let app = XCUIApplication()
-        if app.buttons["Edit"].waitForExistence(timeout: 1) {
-            XCTAssert(app.navigationBars.buttons["Edit"].exists, "Cannot locate Edit button.")
-            app.buttons["Edit"].tap()
-        }
-        
-        if app.buttons["Add"].waitForExistence(timeout: 1) {
-            XCTAssert(app.navigationBars.buttons["Add"].exists, "Cannot locate Add button.")
-            app.buttons["Add"].tap()
-            sleep(2)
-            app.buttons["Add"].tap()
-            sleep(2)
-            app.buttons["Add"].tap()
-            sleep(2)
-            app.buttons["Add"].tap()
-        }
-        
-//        if app.buttons["Delete"].waitForExistence(timeout: 3) {
-//            XCTAssert(app.buttons["Delete"].exists, "Cannot locate Delete button.")
-//            app.buttons["Delete"].tap()
-//        }
+        let navBar = app.navigationBars["Master"]
+        XCTAssert(navBar.buttons["Edit"].exists, "Cannot locate Edit button.")
+        navBar.buttons["Edit"].tap()
         
         
+//        XCTAssert(navBar.buttons["Add"].exists, "Cannot locate Add button.")
+//        navBar.buttons["Add"].tap()
+//        sleep(2)
+//        navBar.buttons["Add"].tap()
+//        sleep(2)
+//        navBar.buttons["Add"].tap()
+//        sleep(2)
+//        navBar.buttons["Add"].tap()
+        
+        let table = app.tables
+        XCTAssert(table["Delete"].exists, "Cannot locate Delete button.")
+        app.tables.buttons["Delete"].tap()
+        
+        navBar.buttons["Done"].tap()
     
         let buttonChildren = app.buttons.allElementsBoundByAccessibilityElement
 
@@ -63,6 +60,22 @@ class MyMasterDetailDemoUITests: XCTestCase {
 //
 //        XCTAssert(buttonChildren.firstMatch.exists, "Cannot locate + button.")
 ////        XCTAssert(app.staticTexts["Welcome to XCUITest"].exists)
+    }
+    
+    func testRecorded() {
+        let app = XCUIApplication()
+        let masterNavigationBar = app.navigationBars["Master"]
+        masterNavigationBar.buttons["Edit"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.buttons["Delete 2019-08-28 22:36:53 +0000"].tap()
+        
+        let deleteButton = tablesQuery.buttons["Delete"]
+        deleteButton.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Delete 2019-08-28 22:36:48 +0000"]/*[[".cells.buttons[\"Delete 2019-08-28 22:36:48 +0000\"]",".buttons[\"Delete 2019-08-28 22:36:48 +0000\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        deleteButton.tap()
+        masterNavigationBar.buttons["Done"].tap()
+        
     }
 
 }
